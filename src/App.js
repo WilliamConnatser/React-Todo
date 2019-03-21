@@ -21,6 +21,20 @@ class App extends React.Component {
     });
   }
 
+  //Update todo filter
+  updateFilter = event => {
+    this.setState({
+      filter: event.target.value
+    });
+  }
+
+  updateInput = event => {
+    console.log(event.target.name)
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   //Add a todo
   addTodo = event => {
     event.preventDefault();
@@ -52,13 +66,6 @@ class App extends React.Component {
     })
   }
 
-  //Update todo filter
-  updateFilter = event => {
-    this.setState({
-      filter: event.target.value
-    });
-  }
-
   //Clear todo filter
   clearFilter = event => {
     event.preventDefault();
@@ -79,21 +86,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <main>
-        <h1>Hmmm... What's there Todo?</h1>
-        <TodoForm
-          newTodo={ this.state.newTodo }
-          updateNewTodo = { this.updateNewTodo }
-          addTodo = { this.addTodo }
-          filter = { this.state.filter }
-          updateFilter = { this.updateFilter }
-          clearFilter = { this.clearFilter }
-        />
-        <TodoList
-          toggleComplete={ this.toggleComplete }
-          filter={ this.state.filter }
-          todos={ this.state.todos }
-        />
+      <main className="">
+        <div className="">
+          <h1>Hmmm... What's there Todo?</h1>
+          <TodoForm
+            newTodo={ this.state.newTodo }
+            updateInput = { this.updateInput }
+            addTodo = { this.addTodo }
+            filter = { this.state.filter }
+            clearFilter = { this.clearFilter }
+          />
+          <TodoList
+            toggleComplete={ this.toggleComplete }
+            filter={ this.state.filter }
+            todos={ this.state.todos }
+          />
+        </div>
       </main>
     );
   }

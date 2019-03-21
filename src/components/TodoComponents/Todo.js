@@ -1,20 +1,16 @@
 import React from 'react';
 
 export default props => {
-
-    let style;
-    if(props.completed) style = { textDecoration: 'line-through'}
-    else style = {}
-
     return (
-        <div>
-            
+        <div>            
             <span 
-                style={ style }
+                style={ props.completed ? { textDecoration: 'line-through' } : {} }
                 id={ props.id }
                 completed={ props.completed.toString() }
                 onClick={ props.toggleComplete }
-            > { props.task } </span>
+            >
+                { props.task }
+            </span>
         </div>
     )
 }
