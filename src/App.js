@@ -5,13 +5,17 @@ import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
-    this.state = {
-      todos: [],
-      newTodo: "",
-      filter: ""
+    if(props.appData !== undefined) {
+      this.state = JSON.parse(props.appData);
+    } else {
+      this.state = {
+        todos: [],
+        newTodo: "",
+        filter: ""
+      }
     }
   }
 
@@ -19,7 +23,7 @@ class App extends React.Component {
   updateInput = event => {
     this.setState({
       [event.target.name]: event.target.value
-    })
+    });
   }
 
   //Add a Todo
@@ -71,7 +75,16 @@ class App extends React.Component {
     });
   }
 
+  //Saves state to localStorage
+  savedata(){
+    window.localStorage.appData = JSON.stringify(this.state);
+  }
+
   render() {
+    //The render() function is called each time state changes.
+    //Leverage that life cycle occurrence to save state to localStorage every time the state changes.
+    this.savedata();
+
     return (
       <main className="container">
         <div className="list-container">
