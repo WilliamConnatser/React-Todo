@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
@@ -14,28 +15,14 @@ class App extends React.Component {
     }
   }
 
-  //Update new todo
-  updateNewTodo = event => {
-    this.setState({
-      newTodo: event.target.value
-    });
-  }
-
-  //Update todo filter
-  updateFilter = event => {
-    this.setState({
-      filter: event.target.value
-    });
-  }
-
+  //Text input event handler
   updateInput = event => {
-    console.log(event.target.name)
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
-  //Add a todo
+  //Add a Todo
   addTodo = event => {
     event.preventDefault();
     this.setState({
@@ -86,8 +73,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <main className="">
-        <div className="">
+      <main className="container">
+        <div className="list-container">
           <h1>Hmmm... What's there Todo?</h1>
           <TodoForm
             newTodo={ this.state.newTodo }
@@ -95,6 +82,7 @@ class App extends React.Component {
             addTodo = { this.addTodo }
             filter = { this.state.filter }
             clearFilter = { this.clearFilter }
+            clearCompleted = { this.clearCompleted }
           />
           <TodoList
             toggleComplete={ this.toggleComplete }

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default props => {
     return (
-        <div>            
+        <div className="todo-item">            
             <span 
                 style={ props.completed ? { textDecoration: 'line-through' } : {} }
                 id={ props.id }
