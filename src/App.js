@@ -5,11 +5,11 @@ import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
-    if(props.appData !== undefined) {
-      this.state = JSON.parse(props.appData);
+    if(window.localStorage.appData !== undefined) {
+      this.state = JSON.parse(window.localStorage.appData);
     } else {
       this.state = {
         todos: [],
