@@ -7,7 +7,7 @@ export default props => {
     const todos = props.todos.filter(todo => {
         return todo.task.includes(props.filter);
     }).map(todo => {
-        return (            
+        return (    
             <Todo
                 key={todo.id}
                 task={todo.task}
@@ -20,7 +20,6 @@ export default props => {
 
     return (
         <div>
-            TodoList!
             { todos }
         </div>
     )

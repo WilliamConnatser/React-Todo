@@ -1,0 +1,69 @@
+html,body {
+    background: black;
+    font-size: 62.5%;
+    box-sizing: border-box;
+
+}
+
+*,*::after,*::before {
+    box-sizing: inherit;
+}
+
+h1 {
+    color: white;
+    font-size: 5rem;
+}
+
+button {
+    margin: 10px 0;
+    padding: 0 20px;
+    height: 35px;
+    border: none;
+
+    background: black;
+    color: white;
+}
+
+@media (max-width: 500px) {
+    button {
+        width: 90%;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+}
+
+button:hover{
+    color: grey;
+}
+
+input {
+    width: 50%;
+    max-width: 500px;
+    margin: 10px 0;
+    height: 35px;
+    border: 0;
+
+    font-size: 1.9rem;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    input {
+        width: 90%;
+        margin: 0;
+    }
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: grey;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.todo-item {
+    cursor: pointer;
+    font-size: 4rem;
+    margin: 15px 0;
+}
