@@ -1,0 +1,10 @@
+{
+    "client": "true",
+    "clientRoot": "/",
+    "clientEntry": "index.html",
+    "clientBuild": "true",
+    "clientBuildEntry": "/build",
+    "server": "false",
+    "serverRoot": "/",
+    "serverEntry": "index.js"
+}
