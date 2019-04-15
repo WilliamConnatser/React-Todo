@@ -1,10 +1,12 @@
 {
     "client": "true",
     "clientRoot": "/",
-    "clientEntry": "index.html",
     "clientBuild": "true",
-    "clientBuildEntry": "/build",
+    "clientBuildRoot": "/build",
+    "customClientTests": "false",
     "server": "false",
     "serverRoot": "/",
-    "serverEntry": "index.js"
+    "serverEntry": "server.js",
+    "serverPort": "5000",
+    "customServerTests": "false"
 }
