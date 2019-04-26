@@ -1,7 +1,7 @@
 {
     "client": true,
     "clientRoot": "/",
-    "clientBuild": true,
+    "clientBuild": false,
     "clientBuildRoot": "/build",
     "server": false,
     "serverRoot": "/",
